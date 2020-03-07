@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-156800948-1"></script>
+		<script>
+		  window.dataLayer = window.dataLayer || [];
+		  function gtag(){dataLayer.push(arguments);}
+		  gtag('js', new Date());
+		  gtag('config', 'UA-156800948-1');
+		</script>
+
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+    		<meta http-equiv="x-ua-compatible" content="ie=edge">
+		<link rel="canonical" href="robinzxu.github.io/travel">
+
+		<title>Travels | 徐乐彬 Robin Xu</title>	
+		<link rel="stylesheet" type="text/css" href="/css/main.css">
+		
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css" integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ==" crossorigin=""/>
+    		<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js" integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew==" crossorigin=""></script>
+	</head>
+	
+	<body>
+		<nav>
+		<ul>
+			<li id="home"><a href="/">徐乐彬 Robin Xu</a></li>
+			<li class="link"><a href="/cv">CV</a></li>
+			<li class="link"><a href="/travels">Travels</a></li>
+			<li class="last_link"><a href="/blog">Blog</a></li>
+		</ul>
+		</nav>
+		
+		<h2>Oh, the Places You'll Go!</h2>
+		
+		<div id="map" class="travels"></div>
+		<script>
+			var myMap = L.map('map', {
+				center: [0, 0],
+				zoom: 2,
+				maxBounds: new L.LatLngBounds(new L.LatLng(85,-230), new L.LatLng(-85,230)),
+				maxBoundsViscosity: 1.0
+			});
+
+			L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoicm9iaW56eHUiLCJhIjoiY2s1cW03a2hpMDN4MjNtbjB3NWN6dnVyZiJ9.Dpq0JmqedbosEQM1xr7bzg', {
+				maxZoom: 18,
+				minZoom: 1,
+				noWrap: true,
+				bounds: [
+					[85, -180],
+					[-85, 180]
+				],
+				attribution: '&copy; <a target="_blank" rel="noopener noreferrer" href="https://www.openstreetmap.org/">OpenStreetMap</a>,' + ' &copy; <a target="_blank" rel="noopener noreferrer" href="https://www.mapbox.com/">Mapbox</a>',
+				id: 'mapbox/light-v10'
+			}).addTo(myMap);
+			
+			// Gainesville
+			L.marker([29.68, -82.40]).addTo(myMap)
+				.bindPopup("<b>Gainesville (1996-2014)</b><br>I was born and raised in Gainesville, Florida.");
+			
+			// Singapore
+			L.marker([1.28, 103.84]).addTo(myMap)
+				.bindPopup("<b>Singapore (2018-present)</b><br>I moved to Singapore in 2018 and have been here since.");
+			
+			// Cambridge
+			L.marker([52.21, 0.11]).addTo(myMap)
+				.bindPopup("<b>Cambridge (2014-2017)</b><br>I read economics at Trinity College, Cambridge.");
+			
+			// Manapouri
+			L.marker([-45.56, 167.63]).addTo(myMap)
+				.bindPopup("<b>Queenstown (2019)</b><br>Keisha and I visited New Zealand's South Island in December 2019. (2019)");
+		
+			// New York
+			L.marker([40.78, -73.98]).addTo(myMap)
+				.bindPopup("<b>New York (2017-2018)</b><br>My first job out of university was with GIC's Infrastructure team in New York.");
+			
+			// Nanjing
+			L.marker([32.04, 118.78]).addTo(myMap)
+				.bindPopup("<b>Nanjing (2004)</b><br>My family is originally from Nanjing.");
+			
+			// Dar es Salaam
+			L.marker([-6.76, 39.26]).addTo(myMap)
+				.bindPopup("<b>Dar es Salaam (2015)</b><br>I spend a summer in Tanzania as part of the Cambridge Development Initiative.");
+			
+			// Cape Town
+			L.marker([-34.36, 18.47]).addTo(myMap)
+				.bindPopup("<b>Cape Town (2018)</b><br>Keisha and I made a visit to Cape Town in December 2018.");
+			
+			// Iceland
+			L.marker([64.15, -21.89]).addTo(myMap)
+				.bindPopup("<b>Iceland (2017)</b><br>Alex and I drove around Iceland as part of a post-graduation trip.");
+			
+			// Delhi
+			L.marker([28.52, 77.18]).addTo(myMap)
+				.bindPopup("<b>New Delhi (2019)</b><br>Yuh Shi and I spent a day lost in Delhi after our flights got cancelled.");
+			
+			// Sydney
+			L.marker([-33.78, 151.04]).addTo(myMap)
+				.bindPopup("<b>Sydney (2015)</b><br>I spent a week in Sydney visiting friends from university.");
+			
+			// Istanbul
+			L.marker([41.01, 28.98]).addTo(myMap)
+				.bindPopup("<b>Istanbul (2018)</b><br>I wandered around Istanbul for three days before starting work in New York.");
+			
+			// Tokyo
+			L.marker([35.71, 139.76]).addTo(myMap)
+				.bindPopup("<b>Tokyo (2015)</b><br>Family trip to Tokyo to visit one of my cousins who was studying there.");
+			
+			// Chicago
+			L.marker([41.79, -87.60]).addTo(myMap)
+				.bindPopup("<b>Chicago (2019)</b><br>Part of the 2019 US/Canada trip with Keisha. Visited Keshav and Alex who were studying at UChicago. Also ran into Kevin!");
+			
+			// Detroit
+			L.marker([42.30, -83.24]).addTo(myMap)
+				.bindPopup("<b>Detroit (2019)</b><br>Part of the 2019 US/Canada trip with Keisha. Underrated city; the Henry Ford Museum was incredible.");
+			
+			// Philadelphia
+			L.marker([39.95, -75.20]).addTo(myMap)
+				.bindPopup("<b>Philadelphia (2019)</b><br>Part of the 2019 US/Canada trip with Keisha. My cousin graduated from Penn!");
+			
+			// Toronto
+			L.marker([43.65, -79.45]).addTo(myMap)
+				.bindPopup("<b>Toronto (2019)</b><br>Part of the 2019 US/Canada trip with Keisha. Toronto feels like a big Brooklyn.");
+			
+			// Niagara
+			L.marker([43.09, -79.07]).addTo(myMap)
+				.bindPopup("<b>Niagara (2019)</b><br>Part of the 2019 US/Canada trip with Keisha. We walked across the US/Canada border.");
+			
+			// San Francisco
+			L.marker([37.49, -122.15]).addTo(myMap)
+				.bindPopup("<b>San Francisco (2017)</b><br>Visited a few friends in the Bay Area before heading to Singapore to start work.");
+			
+			// Dallas
+			L.marker([32.95, -96.91]).addTo(myMap)
+				.bindPopup("<b>Dallas (2012)</b><br>I used to visit two of my cousins in Dallas over the summer. I first picked up fencing from them here.");
+					
+			// Helsinki
+			L.marker([60.16, 24.91]).addTo(myMap)
+				.bindPopup("<b>Helsinki (2019)</b><br>Layover during my move from New York to Singapore. To those wondering, one day was more than enough time...");
+			
+			// Doha
+			L.marker([25.26, 51.56]).addTo(myMap)
+				.bindPopup("<b>Doha (2015)</b><br>Layover on my way back from Tanzania. They offer free tours from the airport!");
+			
+			// Hong Kong
+			L.marker([22.28, 114.17]).addTo(myMap)
+				.bindPopup("<b>Hong Kong (2018)</b><br>Last minute trip with Keisha to see the New Year's fireworks.");
+			
+			// Mumbai
+			L.marker([19.08, 72.85]).addTo(myMap)
+				.bindPopup("<b>Mumbai (2019)</b><br>Work travel but I entered on a tourist visa.<br><i>Customs lady: &ldquo;How long are you visiting for?&rdquo;<br>Me: &ldquo;Uhh, a day?&rdquo;<br>Customs lady: &ldquo;And where will you be visiting?&rdquo;<br>Me: &ldquo;Err, the Grand Hyatt?&rdquo;</i>");
+		
+			// London
+			L.marker([51.54, -0.16]).addTo(myMap)
+				.bindPopup("<b>London (2016)</b><br>Spent a summer here as an intern. Rented an flat with AJ which our landlord apparently didn't own.");	
+			
+			// Dublin
+			L.marker([53.34, -6.26]).addTo(myMap)
+				.bindPopup("<b>Dublin (2017)</b><br>Visited for a debate tournament. Ireland has the nicest people.");	
+		
+			// Ho Chi Minh City
+			L.marker([11.14, 106.45]).addTo(myMap)
+				.bindPopup("<b>Ho Chi Minh City (2019)</b><br>Weekend trip with Keisha. Visited the unbelievable Cu Chi tunnels.");
+			
+			// Beijing
+			L.marker([40.00, 116.32]).addTo(myMap)
+				.bindPopup("<b>Beijing (2015)</b><br>Visited Will and his family with Alex from Cambridge.");
+			
+			// Paris
+			L.marker([48.86, 2.34]).addTo(myMap)
+				.bindPopup("<b>Paris (2016)</b><br>Post-exam trip with Arun. The entire city was flooded so most museums were closed.");
+		
+			// Budapest
+			L.marker([47.50, 19.04]).addTo(myMap)
+				.bindPopup("<b>Budapest (2017)</b><br>Weekend trip to visit Wenli during her study abroad programme.");
+			
+			// Prague
+			L.marker([50.08, 14.41]).addTo(myMap)
+				.bindPopup("<b>Prague (2016)</b><br>End of summer trip. Home of the worst ballet you could imagine.");
+			
+			// The Hague
+			L.marker([52.07, 4.24]).addTo(myMap)
+				.bindPopup("<b>The Hague (2016)</b><br>The World Universities Debating Championship was here. Pretty much a warzone during New Year's because they apparently don't have fireworks regulations.");
+			
+			// Brussels
+			L.marker([50.85, 4.35]).addTo(myMap)
+				.bindPopup("<b>Brussels (2016)</b><br>Visiting a friend during her internship. The city's very dirty but the beer's pretty good.");
+		
+			// Interlaken
+			L.marker([46.68, 7.82]).addTo(myMap)
+				.bindPopup("<b>Interlaken (2015)</b><br>A &ldquo;life enhancing&rdquo; spring trip with Jonathan. Bought train passes and visited nearly a dozen cities over five days.");
+		
+			// Langkawi
+			L.marker([6.411, 99.827]).addTo(myMap)
+				.bindPopup("<b>Langkawi (2019)</b><br>A belated birthday gift from Keisha. A mini tropical storm passed through while we were there.");
+		
+			// Phuket
+			L.marker([7.842, 98.350]).addTo(myMap)
+				.bindPopup("<b>Phuket (2019)</b><br>2019 Secondaries team retreat. We stayed in a tsunami-proof hotel, as determined by Max");
+		</script>
+	
+		<p>Here are some of the places I've visited over the years. Click on the pins for more detail!</p>
+		
+		<footer>
+		<ul>
+	        	<li class="link"><a href="mailto:robinzxu@gmail.com">robinzxu@gmail.com</a></li>
+	        	<li class="last_link"><a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/robin-zhang-xu-83b8aa62/">LinkedIn</a></li>
+		</ul>
+		</footer>
+	</body>
+</html>
